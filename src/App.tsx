@@ -7,6 +7,9 @@ import Profile from './pages/Profile'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import NavBar from './components/NavBar'
+import OfferList from './pages/OfferList'
+import OfferForm from './pages/OfferForm'
+import OfferDetail from './pages/OfferDetail'
 
 function App() {
 
@@ -19,10 +22,14 @@ function App() {
         <div className='container mx-auto mt-20'>
         <Routes>
           <Route path="#" element={<Home/>}></Route>
-          <Route path="/ListUsers" element={<ListUsers/>}></Route>
-          <Route path="/Profile" element={<Profile/>}></Route>
-          <Route path="/Register" element={<Register/>}></Route>
-          <Route path="/Login" element={<Login/>}></Route>
+          <Route path="/listUsers" element={<ListUsers/>}></Route>
+          <Route path="/profile" element={<Profile/>}></Route>
+          <Route path="/register" element={<Register/>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
+          <Route path="/offers" element={<OfferList/>}></Route>
+          <Route path="/offers/New" element={<OfferForm/>}></Route>
+          <Route path="/offers/edit/:id" element={<OfferForm/>}></Route>
+          <Route path="/offers/:id" element={<OfferDetail/>}></Route>
           
 
         </Routes>

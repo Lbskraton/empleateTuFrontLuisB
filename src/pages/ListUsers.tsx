@@ -1,15 +1,8 @@
 import { useEffect, useState } from "react"
 import { getUsers } from "../services/userService"
+import User from "../models/User"
 
-interface User{
-  name:string,
-  surname:string,
-  role:string,
-  email:string,
-  course: string,
-  active:boolean,
-  acceptNotifications:boolean
-}
+
 
 function ListUsers() {
 

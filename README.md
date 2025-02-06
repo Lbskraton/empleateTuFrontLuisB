@@ -23,6 +23,9 @@ En index css:
   @import "tailwindcss";
 
 
+npm install temporal-polyfill
+
+
 ```
 
 
