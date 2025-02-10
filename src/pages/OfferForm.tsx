@@ -98,9 +98,6 @@ function OfferForm() {
         <button>Guardar</button>
         
 
-          
-
-
         </form>
 
       </div>
