@@ -25,6 +25,8 @@ En index css:
 
 npm install temporal-polyfill
 
+npm install react-hot-toast
+
 
 ```
 

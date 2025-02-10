@@ -1,8 +1,7 @@
 export default async function fetchAPI(endpoint:string,options={}){
 
     try {
-        const response=await fetch(endpoint,
-            options)
+        const response=await fetch(endpoint,options)
 
         if(response.status==401){
             window.location.href='/login'

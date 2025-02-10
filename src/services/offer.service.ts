@@ -4,12 +4,29 @@ const API_URL_BASE=import.meta.env.VITE_API_BASE_URL
 
 
 export class OfferService{
+    static async delete(id: number) {
+        return await  fetchAPI(API_URL_BASE+'/offers/'+id,{method: 'DELETE',
+            headers:{
+                'Content-Type': 'application/json'
+                //token si hubiera
+            },
+            credentials: "include" //para poder inyectar la cookie si se puede
+            
+
+        })
+
+
+
+    }
     static async getById(id: number) {
         return await fetchAPI(API_URL_BASE+'/offers/'+id)
     }
 
-    static async getAll(){
-        return await fetchAPI(API_URL_BASE+'/offers')
+    static async getAll(title?:string){
+        let url=API_URL_BASE+'/offers?'
+        if(title) url+= 'title='+title
+        console.log(await fetchAPI(url))
+        return await fetchAPI(url)
     }
 
 

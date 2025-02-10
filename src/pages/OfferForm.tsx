@@ -4,6 +4,7 @@ import Offer from "../models/Offer"
 import { OfferService } from "../services/offer.service"
 import { useNavigate, useParams } from "react-router-dom"
 import { Temporal } from "temporal-polyfill"
+import toast from "react-hot-toast"
 
 
 function OfferForm() {
@@ -39,8 +40,8 @@ function OfferForm() {
         }))
         .catch((error:Error)=>setError(error.message))
         .finally(()=>setLoading(false))
-      }
-    },[id])
+      }else{setLoading(false)}
+    },[id, setDatosForm])
 
     const handleSubmit = (e: FormEvent) => {
         try {
@@ -54,15 +55,17 @@ function OfferForm() {
         if(id) OfferService.update(Number(id),formData)
         else OfferService.create(formData)
         navigate("/offers")
+        toast.success('Oferta guardada correctamente')
         } catch (error) {
           setError(error instanceof Error ? error.message : "Error desconocido")
+          toast.error('Error al guardar la oferta')
         }finally{
-          setLoading(true)
+          setLoading(false)
         }
       }
 
 
-      if(loading) return <p>Loading...</p>
+      if(loading) return <p>Loading...</p>//da fallos
       
 
   return (
