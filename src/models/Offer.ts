@@ -6,6 +6,6 @@ export default interface Offer{
     contactEmail?:string,
     location?:string,
     expired:string,
-    published?: string,
+    published: string,
     idCategory?:number
 }
