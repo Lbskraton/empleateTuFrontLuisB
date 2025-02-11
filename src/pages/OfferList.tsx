@@ -51,7 +51,7 @@ function OfferList() {
 
   return (
     <div>
-        <h1>Listado de ofertas</h1>
+        <h1 className="dark:text-white">Listado de ofertas</h1>
         <div>
             
                 
@@ -62,9 +62,9 @@ function OfferList() {
 
         </div>
         
-        {loading && <p>Loading....</p>}
-        {error && <p>{error}</p>}
-        {offers?.length===0 && <p>Offers not avaliable</p>}
+        {loading && <p className="dark:text-white">Loading....</p>}
+        {error && <p className="dark:text-white">{error}</p>}
+        {offers?.length===0 && <p className="dark:text-white">Offers not avaliable</p>}
         {offers?.map(offer=>
             <div key={offer.id}>
                 {offer.title}

@@ -11,8 +11,8 @@ export default async function fetchAPI(endpoint:string,options={}){
             const errordata=await response.json().catch(()=>null) //guardo dato fallo y pongo a nulo
             throw new Error(errordata?.message || 'Error desconocido')
         }
-        const data=await response.json()
-        return data
+        return await response.json()
+        
     } catch (error) {
         const msg=error instanceof Error ? error.message : "Error desconocido"
         throw new Error(msg) //devuelve un json

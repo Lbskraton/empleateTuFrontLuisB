@@ -29,17 +29,17 @@ async function receiveList(){//Creo funcion por useEffect no puede async
   },[]) //solo la 1º vez
 
   if(loading){
-    return <div> Loading....</div>
+    return <div className="dark:text-white"> Loading....</div>
   }
 
   return (
     <>
       <div className="relative overflow-x-auto">
-        {message}
+        <span className="dark:text-white">{message}</span>
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 ">
                 Name
               </th>
               <th scope="col" className="px-6 py-3">
