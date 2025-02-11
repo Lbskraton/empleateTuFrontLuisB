@@ -1,6 +1,6 @@
 import Offer from "../models/Offer"
 import fetchAPI from "../utils/FetchAPI"
-const API_URL_BASE=import.meta.env.VITE_API_BASE_URL
+const API_URL_BASE=import.meta.env.VITE_API_URL_BASE
 
 
 export class OfferService{

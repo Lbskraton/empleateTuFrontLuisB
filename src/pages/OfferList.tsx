@@ -70,7 +70,7 @@ function OfferList() {
                 {offer.title}
                 <Link to={`/offers/edit/${offer.id}`}>Editar</Link>
                 <Link to={`/offers/${offer.id}`}>Ver</Link>
-                <button onClick={()=>handleDelete(offer.id)}>Borrar</button>
+                <button className="dark:text-white" onClick={()=>handleDelete(offer.id)}>Borrar</button>
             </div>
         )}
       
