@@ -1,9 +1,9 @@
 
-const API_URL_BASE=import.meta.env.VITE_API_URL_BASE
+const API_URL_BASE=import.meta.env.VITE_API_URL_BASE+'/users'
 
 export const getUsers=async ()=>{
     try {
-        const response=await fetch(API_URL_BASE+'users/userlist',
+        const response=await fetch(API_URL_BASE+'/userlist',
             {method: 'GET',
                 headers:{
                     'Content-Type': 'application/json'
