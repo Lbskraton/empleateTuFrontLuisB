@@ -7,5 +7,5 @@ export default interface Offer{
     location?:string,
     expired:string,
     published: string,
-    idCategory?:number
+    idCategory?:number | null
 }

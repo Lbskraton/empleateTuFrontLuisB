@@ -56,6 +56,7 @@ function OfferForm() {
           e.preventDefault()
           const formData={
             ...datosForm,
+            idCategory:Number(datosForm.idCategory),
             published:new Date(datosForm.published || '').toISOString(),
             expired:new Date(datosForm.expired || '').toISOString(),
           }
@@ -103,8 +104,8 @@ function OfferForm() {
         </div>
 
         <div>id Categoria</div>
-        <select name="idCategory" value={datosForm.idCategory} onChange={handleChange}>
-          <option>Selecciona Categoria</option>
+        <select name="idCategory" value={datosForm.idCategory || ''} onChange={handleChange}>
+          <option value="">Selecciona Categoria</option>
           {categories?.map(category=>
             <option key={category.id} value={category.id}>{category.name}</option>
           )}
