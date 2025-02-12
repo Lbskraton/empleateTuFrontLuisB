@@ -19,13 +19,13 @@ export class CategoryService{
     
         }
         static async getById(id: number) {
-            return await fetchAPI(API_URL_BASE+'/categories/'+id)
+            return await fetchAPI(API_URL_BASE+'/categories/'+id,{credentials:"include"})
         }
     
         static async getAll(title?:string){
             let url=API_URL_BASE+'/categories?'
             if(title) url+= 'title='+title
-            console.log(await fetchAPI(url))
+            console.log(await fetchAPI(url),{credentials:"include"})
             return await fetchAPI(url)
         }
     
