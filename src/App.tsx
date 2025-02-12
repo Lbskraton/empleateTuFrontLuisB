@@ -33,7 +33,7 @@ function App() {
           <Route path="/offers/New" element={<OfferForm/>}></Route>
           <Route path="/offers/edit/:id" element={<OfferForm/>}></Route>
           <Route path="/offers/:id" element={<OfferDetail/>}></Route>
-          <Route path="/categorys" element={<CategoryList/>}></Route>
+          <Route path="/categories" element={<CategoryList/>}></Route>
           
 
         </Routes>

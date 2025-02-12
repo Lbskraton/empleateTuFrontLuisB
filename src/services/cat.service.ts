@@ -4,7 +4,7 @@ const API_URL_BASE=import.meta.env.VITE_API_URL_BASE
 
 export class CategoryService{
 
-    static async delete(id: number) {
+        static async delete(id: number) {
             return await  fetchAPI(API_URL_BASE+'/categories/'+id,{method: 'DELETE',
                 headers:{
                     'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ export class CategoryService{
         }
     
         static async getAll(title?:string){
-            let url=API_URL_BASE+'/offers?'
+            let url=API_URL_BASE+'/categories?'
             if(title) url+= 'title='+title
             console.log(await fetchAPI(url))
             return await fetchAPI(url)
