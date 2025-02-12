@@ -18,7 +18,7 @@ useEffect(()=>{
   .then(setOffer)
   .catch(error=>setError(error.message))
   .finally(()=>setLoading(false))
-})
+  },[id])
 
   if(loading) return <div>Loading....</div>
   if(error) return <div>Error: {error}</div>
