@@ -3,10 +3,10 @@ import useFormHook from "../components/FormHook"
 import { loginUser } from "../services/auth.service"
 
 function Login() {
-    const{datosForm,handleChange,...o}=useFormHook({email:"algo",password:""})
+    const{datosForm,handleChange}=useFormHook({email:"algo",password:""})
     const [message,setMessage]=useState("")
 
-    console.log(o.error)
+
 
     const handleSubmit=async (e:FormEvent)=>{
         e.preventDefault()

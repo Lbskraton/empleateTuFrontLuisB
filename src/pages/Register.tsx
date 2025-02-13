@@ -1,6 +1,7 @@
 import { FormEvent } from "react"
 import useFormHook from "../components/FormHook"
 
+
 interface Props{
   [key:string]:string
   
@@ -12,6 +13,8 @@ function Register() {
  
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
+    
+    
   }
 
   return (
