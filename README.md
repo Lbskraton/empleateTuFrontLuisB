@@ -27,6 +27,7 @@ npm install temporal-polyfill
 
 npm install react-hot-toast
 
+npm i jwt-decode //no usable por seguridad en el frontend
 
 ```
 

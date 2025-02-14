@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom"
+import { useAuth } from "../context/AuthContext"
 
 
 function NavBar() {
+
+  const{user,isAdmin,isAuthenticated,logout}=useAuth()
   return (
+
     
 
 <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
@@ -34,16 +38,24 @@ function NavBar() {
       <li>
         <Link to="/profile" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Profile</Link>
       </li>
-      <li>
+      {isAdmin && <li>
         <Link to="/listUsers" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Usuarios</Link>
-      </li>
-      <li>
+      </li>}
+      
+      {isAuthenticated && <li>
         <Link to="/offers" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Ofertas</Link>
-      </li>
-      <li>
+      </li>}
+      
+      {isAdmin && <li>
         <Link to="/categories" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Categorias</Link>
-      </li>
+      </li>}
+      
+      
     </ul>
+    {isAuthenticated && <button onClick={logout}>Log out</button>}
+    <span className="text-white">{user?.email} {user?.role}</span>
+    
+    
   </div>
   </div>
 </nav>
