@@ -29,7 +29,7 @@ export function AuthProvider({children}:{children:React.ReactNode}){
   useEffect(()=>{
     async function callBack(){
       const response=await fetch(import.meta.env.VITE_API_URL_BASE+'/users/profile',{credentials:"include"})
-      const data=response.json()
+      const data=await response.json()
       setUser(data)
 
     }
@@ -45,7 +45,8 @@ export function AuthProvider({children}:{children:React.ReactNode}){
         const tokenJWT=await loginUser(email,password)
         setUser(tokenJWT)
       } catch (error) {
-        throw new Error('Error en el login '+error?.message)
+        const msg= error instanceof Error ? error.message : "Error desconocido"
+        throw new Error(msg)
       }
   }
 
