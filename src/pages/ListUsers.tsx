@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import { getUsers } from "../services/userService"
+
 import User from "../models/User"
+import { UserService } from "../services/userService"
 
 
 
@@ -12,7 +13,7 @@ function ListUsers() {
 
 async function receiveList(){//Creo funcion por useEffect no puede async
   try {
-    const usersList=await getUsers()
+    const usersList=await UserService.getUsers()
     setUsers(usersList)
   } catch (error) {
     const msg= error instanceof Error ? error.message : "Error desconocido"
